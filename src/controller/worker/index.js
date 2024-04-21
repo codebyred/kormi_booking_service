@@ -1,4 +1,4 @@
-import { WorkerBooking } from "../model/workerBooking.model.js";
+import { WorkerBooking } from "../../model/worker/index.js";
 
 
 export const getBooking = async(req, res)=>{

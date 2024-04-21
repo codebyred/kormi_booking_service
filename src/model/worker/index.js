@@ -1,7 +1,7 @@
-import { sequelize } from "../config/dbConn.config.js"
+import { sequelize } from "../../config/dbConn.config.js"
 import { DataTypes } from "sequelize";
 
-export const ServiceBooking = sequelize.define("ServiceBooking",{
+export const WorkerBooking = sequelize.define("WorkerBooking",{
 
     id: {
 
@@ -14,7 +14,7 @@ export const ServiceBooking = sequelize.define("ServiceBooking",{
         type: DataTypes.INTEGER
 
     },
-    serviceId:{
+    workerId:{
 
         type: DataTypes.INTEGER
 
@@ -31,9 +31,9 @@ export const ServiceBooking = sequelize.define("ServiceBooking",{
 
 (async ()=>{
     try{
-        await ServiceBooking.sync();
+        await WorkerBooking.sync();
     }catch(e){
-        console.log("could not sync BookService")
+        console.log("could not sync BookWorker")
     }
     
 })();

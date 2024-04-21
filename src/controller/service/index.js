@@ -1,4 +1,4 @@
-import { ServiceBooking } from "../model/serviceBooking.model.js";
+import { ServiceBooking } from "../../model/service/index.js";
 
 export const saveBooking = async (req, res)=>{
 
