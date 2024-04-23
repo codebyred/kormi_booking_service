@@ -1,5 +1,5 @@
 import express from "express";
-import routes from "./router/index.js"
+import router from "./router/index.js"
 
 const app = express();
 const port = process.env.PORT || 3107;
@@ -7,7 +7,7 @@ const port = process.env.PORT || 3107;
 
 app.use(express.json());
 
-app.use("/api/",routes);
+app.use("/api/",router);
 
 app.listen(port, async (err) =>{
     if(err) return console.log(`Could not establish connection on ${port}`);

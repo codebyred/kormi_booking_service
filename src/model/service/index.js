@@ -5,7 +5,7 @@ export const ServiceBooking = sequelize.define("ServiceBooking",{
 
     id: {
 
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey:true
 
     },
@@ -23,10 +23,15 @@ export const ServiceBooking = sequelize.define("ServiceBooking",{
 
         type: DataTypes.STRING
 
+    },
+    paid:{
+
+        type:DataTypes.BOOLEAN,
+        
     }
 
 },{
-    timestamps:false
+    timestamps:true
 });
 
 (async ()=>{
