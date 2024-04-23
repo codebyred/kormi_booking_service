@@ -1,9 +1,9 @@
 import express from "express"
-import {updateBookingStatus} from "../../../controller/worker/index.js";;
+import {setBookingStatusToTrue} from "../../../controller/success/index.js";;
 
 const router = express.Router();
 
-router.post("/:bookingId", updateBookingStatus)
+router.post("/:bookingId", setBookingStatusToTrue)
 
 
 export default router;

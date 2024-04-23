@@ -24,7 +24,7 @@ export const saveBooking = async (req, res)=>{
             currency: 'BDT',
             tran_id:bookingId, 
             success_url: `http://localhost:3020/api/booking/success/${bookingId}`,
-            fail_url: `http://localhost:3020/api/booking/fail/${bookingId}`,
+            fail_url: `http://localhost:3020/api/booking/fail`,
             cancel_url: 'http://localhost:3000/cancel',
             ipn_url: 'http://localhost:3000/payment/ipn',
             shipping_method:"home",
@@ -73,16 +73,4 @@ export const saveBooking = async (req, res)=>{
 
 }
 
-export const updateBookingStatus = async(req, res)=>{
 
-    const bookingId = req.params.bookingId;
-
-    await WorkerBooking.update({paid: true},{
-        where:{
-            id:bookingId
-        }
-    });
-
-    return res.redirect("http://localhost:3000/payment/success");
-
-}
