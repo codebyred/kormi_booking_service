@@ -26,8 +26,11 @@ export const WorkerBooking = sequelize.define("WorkerBooking",{
     },
     paid:{
 
-        type:DataTypes.BOOLEAN,
+        type: DataTypes.BOOLEAN,
         
+    },
+    schedule:{
+        type: DataTypes.DATE
     }
 
 },{

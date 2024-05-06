@@ -47,7 +47,6 @@ export const saveBooking = async (req, res)=>{
         const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live)
         const sslczApiResponse =  await sslcz.init(data);
         const paymentGatewayURL = sslczApiResponse.GatewayPageURL;
-        console.log(paymentGatewayURL)
 
         const workerBooking = await WorkerBooking.build({
 
@@ -55,13 +54,13 @@ export const saveBooking = async (req, res)=>{
             clientId: booking.clientId,
             workerId: booking.workerId,
             status:"pending",
-            paid:false
+            paid:false,
+            schedule: booking.schedule
 
         });
 
         await workerBooking.save();
 
-        console.log(paymentGatewayURL)
         return res.json({url: paymentGatewayURL});
 
     }catch(e){
